@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+</head>
+<body>
+  <header>
+    <h1>
+        Formulaire de Soumission de mission
+    </h1>
+  </header>  
+  <br>
+ 
+  <fieldset>
+    <legend>Information de la mission</legend>
+    <br>
+  <form method="post" enctype="application/x-www-form-urlencoded" >
+    <label for ="name "> Titre de la mission: </label>
+    <input type="text" name="titre de la mission" id="titre de la mission"  required>
+    <br>
+    <br>
+    <label for ="Date de mission "> Date de la mission: </label>
+    <input type="date" name="date de la mission" id="date de la mission"  required>
+    <br>
+    <br>
+    <label for="text">Description de la Mission:</label>
+    <textarea name="text" id="text"></textarea><br><br>
+    <label for="Télécharger une Image de la Mission"> Télécharger une Image de la Mission :</label>
+    <input type="file" id="Choisir un fichier" name="fichier" accept=".txt, .doc, .docx"> <br><br>
+    <label for="Type de Mission">Type de Mission :</label>
+            <select id="Type de Mission" name="Type de Mission">
+        <option value="Reconnaissance">Reconnaissance</option>
+        <option value="Détection">Détection</option>
+        <option value="Identification">Identification</option>
+            </select>
+            <br> <br>
+            <label for="missionEquip">Equipement Nécessaire :</label>   
+        <input type="checkbox" id="Equipement nécessaire " name="Equipement nécessaire" value="Jumelles">
+        <label for="Equipement nécessaire">Jumelles</label>     
+           <input type="checkbox" id="Equipement nécessaire" name="Equipement nécessaire" value="Carte">
+        <label for="Equipement nécessaire">Carte</label>
+        <br><br>
+        <label for="Télécharger document de la Mission">Document à Télécharger :</label>
+    <input type="file" id="Choisir un fichier" name="fichier" accept=".all"> <br><br>
+    <input type="submit" value="Soumettre la Mission" >
+          </fieldset>
+  </form>
+  <br>
+  <br>
+  <footer>
+  <a href="voir la liste ">Voir la liste des missons soumises</a><br>
+ <p> <a href="Index.html"> Voir toutes les  missions soumises</a>|<a href="downloads.html">Télécharger les documents nécessaires</a> | <a href="login.html">Se connecter</a></p>
+  <script>
+    function previewImage(event) { const file = event.target.files[0];
+       const reader = new FileReader(); 
+       reader.onload = function() { const output = document.getElementById('imagePreview');
+       output.src = reader.result; 
+       output.style.display = 'block'; };
+        reader.readAsDataURL(file); }
+        </script> 
+        </footer>
+</body>
+</html>
